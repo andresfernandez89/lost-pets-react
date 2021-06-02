@@ -1,5 +1,3 @@
-import '../main/Main.css';
-
 function NavBar() {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light fw-bold bg-site-main">

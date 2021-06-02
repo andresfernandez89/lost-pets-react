@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'Noto Sans JP', sans-serif;
+	src: url('../src/assets/fonts/NotoSansJP-Black.otf'),
+		url('../src/assets/fonts/NotoSansJP-Bold.otf'),
+		url('../src/assets/fonts/NotoSansJP-Light.otf'),
+		url('../src/assets/fonts/NotoSansJP-Medium.otf'),
+		url('../src/assets/fonts/NotoSansJP-Regular.otf'),
+		url('../src/assets/fonts/NotoSansJP-Thin.otf');
+}
+
+.bg-site-main {
+	background-color: #ffd6a5;
+}
+.color-site-main {
+	color: #ffd6a5;
+}
