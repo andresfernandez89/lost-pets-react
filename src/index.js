@@ -5,7 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/js/all.min.js';
-import './index.css';
+import './index.scss';
 import App from './components/app/App';
 
 ReactDOM.render(
