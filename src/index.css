@@ -8,9 +8,13 @@
 		url('../src/assets/fonts/NotoSansJP-Thin.otf');
 }
 
-.bg-site-main {
+body {
+	background-color: #edf2fb;
+}
+.bg-site-main-orange {
 	background-color: #ffd6a5;
 }
-.color-site-main {
-	color: #ffd6a5;
+
+.bg-site-main-grey {
+	background-color: #e9ecef;
 }

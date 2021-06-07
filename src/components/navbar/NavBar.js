@@ -1,16 +1,23 @@
-function NavBar() {
+import CartWidget from '../cartWidget/CartWidget';
+
+const NavBar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light fw-bold bg-site-main">
+		<nav className="navbar navbar-expand-lg navbar-light fw-bold bg-site-main-orange">
 			<div className="container-fluid">
-				<a className="navbar-brand h1 fs-2" href="#">
-					Lost Pets
-				</a>
+				<h1>
+					<a className="navbar-brand fs-2" href="#">
+						Lost Pets
+					</a>
+				</h1>
 				<button
-					className="navbar-toggler"
+					class="navbar-toggler"
 					type="button"
 					data-bs-toggle="collapse"
-					data-bs-target="#navbarNav">
-					<span className="navbar-toggler-icon" />
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div
 					className="collapse navbar-collapse d-flex-md justify-content-end"
@@ -37,10 +44,10 @@ function NavBar() {
 							</a>
 						</li>
 					</ul>
+					<CartWidget />
 				</div>
 			</div>
 		</nav>
 	);
-}
-
+};
 export default NavBar;
