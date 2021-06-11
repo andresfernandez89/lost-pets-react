@@ -1,6 +1,8 @@
 import ItemCount from '../itemCount/ItemCount';
 const itemListContainer = ({ text }) => {
-	let onAdd;
+	const onAdd = (amount) => {
+		console.log(`Agregaste ${amount} al carrito`);
+	};
 	return (
 		<>
 			<div className="d-flex justify-content-center">
