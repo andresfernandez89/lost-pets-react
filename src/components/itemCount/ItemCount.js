@@ -1,14 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const ItemCount = ({ initial, stock, onAdd }) => {
 	const [items, setItems] = useState(initial);
-
-	useEffect(
-		(items) => {
-			console.log(`Se seleccionaron: ${items}`);
-		},
-		[items]
-	);
 
 	return (
 		<>
@@ -23,15 +16,17 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 					/>
 				</button>
 				<span className="fs-3 bold align-middle">{items}</span>
-				<button id="addCount" className="btn ms-4">
+				<button
+					id="addCount"
+					className="btn ms-4"
+					disabled={items > stock ? true : false}>
 					<i
 						className="bi bi-plus-square"
 						style={{ fontSize: '2rem' }}
 						onClick={() => {
 							items < stock
 								? setItems(items + 1)
-								: //: document.getElementById("addCount").attributes.disabled;
-								  alert('Sin disponibilidad');
+								: alert('Sin disponibilidad');
 						}}
 					/>
 				</button>

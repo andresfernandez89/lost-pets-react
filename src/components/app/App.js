@@ -10,10 +10,7 @@ const App = () => {
 			<div className="container">
 				<div className="row mt-4 d-flex justify-content-around">
 					<div className="col-md-6 text-center rounded-3 w-auto">
-						<ItemListContainer text="Mascotas Perdidas" />
-					</div>
-					<div className="col-md-6 text-center w-auto">
-						<ItemListContainer text="Mascotas en Adopcion" />
+						<ItemListContainer text="Alimentos de Mascotas" />
 					</div>
 				</div>
 			</div>
