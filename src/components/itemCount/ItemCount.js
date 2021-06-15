@@ -19,7 +19,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 				<button
 					id="addCount"
 					className="btn ms-4"
-					disabled={items > stock ? true : false}>
+					disabled={items === stock ? true : false}>
 					<i
 						className="bi bi-plus-square"
 						style={{ fontSize: '2rem' }}
