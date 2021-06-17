@@ -36,7 +36,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 					href="#"
 					className="btn btn-primary w-75"
 					onClick={() => onAdd(items)}>
-					Lo Quiero
+					Agregar al Carrito
 				</a>
 			</div>
 		</>

@@ -1,4 +1,5 @@
 import ItemListContainer from '../itemListContainer/ItemListContainer';
+import ItemDetailContainer from '../itemDetailContainer/ItemDetailContainer';
 import NavBar from '../navbar/NavBar';
 
 const App = () => {
@@ -12,6 +13,9 @@ const App = () => {
 					<div className="col-md-6 text-center rounded-3 w-auto">
 						<ItemListContainer text="Alimentos de Mascotas" />
 					</div>
+				</div>
+				<div className="col-md-6 text-center rounded-3 w-auto mt-3">
+					<ItemDetailContainer />
 				</div>
 			</div>
 		</div>
