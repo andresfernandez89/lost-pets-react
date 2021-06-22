@@ -1,7 +1,3 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import ItemDetail from '../itemDetail/ItemDetail';
-
 const dataProduct = [
 	{
 		id: 1,
@@ -166,29 +162,3 @@ const dataProduct = [
 		category: 'birds'
 	}
 ];
-
-const getItems = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		resolve(dataProduct);
-	}, 2000);
-});
-const ItemDetailContainer = () => {
-	const [productDetail, setProductDetail] = useState([]);
-	const { id } = useParams();
-
-	useEffect(() => {
-		getItems
-			.then((data) => {
-				return data[id];
-			})
-			.then((info) => setProductDetail(info));
-	}, [id]);
-
-	return (
-		<>
-			<ItemDetail productDetail={productDetail} />
-		</>
-	);
-};
-
-export default ItemDetailContainer;

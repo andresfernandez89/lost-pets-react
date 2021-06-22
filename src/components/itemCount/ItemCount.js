@@ -5,7 +5,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
 	return (
 		<>
-			<div className="my-3">
+			<div className="mt-3">
 				<button id="dashCount" className="btn me-4">
 					<i
 						className="bi bi-dash-square"
@@ -31,10 +31,10 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 					/>
 				</button>
 			</div>
-			<div className="w-100">
+			<div className="w-auto">
 				<a
 					href="#"
-					className="btn btn-primary w-75"
+					className="btn btn-primary fw-bold"
 					onClick={() => onAdd(items)}>
 					Agregar al Carrito
 				</a>

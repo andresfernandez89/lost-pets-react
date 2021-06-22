@@ -1,24 +1,29 @@
 import ItemListContainer from '../itemListContainer/ItemListContainer';
 import ItemDetailContainer from '../itemDetailContainer/ItemDetailContainer';
 import NavBar from '../navbar/NavBar';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './app.scss';
 
 const App = () => {
 	return (
-		<div>
-			<header>
+		<>
+			<BrowserRouter>
 				<NavBar />
-			</header>
-			<div className="container">
-				<div className="row mt-4 d-flex justify-content-around">
-					<div className="col-md-6 text-center rounded-3 w-auto">
-						<ItemListContainer text="Alimentos de Mascotas" />
-					</div>
-				</div>
-				<div className="col-md-6 text-center rounded-3 w-auto mt-3">
-					<ItemDetailContainer />
-				</div>
-			</div>
-		</div>
+				<main className="container main-container vh-100">
+					<Switch>
+						<Route exact path="/">
+							<ItemListContainer text="Alimentos de Mascotas" />
+						</Route>
+						<Route exact path="/category/:category">
+							<ItemListContainer text="Alimentos de Mascotas" />
+						</Route>
+						<Route exact path="/item/:id">
+							<ItemDetailContainer />
+						</Route>
+					</Switch>
+				</main>
+			</BrowserRouter>
+		</>
 	);
 };
 
