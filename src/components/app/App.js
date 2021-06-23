@@ -15,10 +15,13 @@ const App = () => {
 							<ItemListContainer text="Alimentos de Mascotas" />
 						</Route>
 						<Route exact path="/category/:category">
-							<ItemListContainer text="Alimentos de Mascotas" />
+							<ItemListContainer />
 						</Route>
 						<Route exact path="/item/:id">
 							<ItemDetailContainer />
+						</Route>
+						<Route exact path="/contact">
+							<ItemListContainer text="Contacto" />
 						</Route>
 					</Switch>
 				</main>

@@ -56,7 +56,7 @@ const NavBar = () => {
 							<li className="nav-item">
 								<NavLink
 									exact
-									to={'/'}
+									to={'/contact'}
 									activeClassName="selected rounded"
 									className="nav-link">
 									Contacto
