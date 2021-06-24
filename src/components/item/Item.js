@@ -1,9 +1,5 @@
 import { Link } from 'react-router-dom';
 
-const onAdd = (amount) => {
-	console.log(`Agregaste ${amount} al carrito`);
-};
-
 const Item = ({ element }) => {
 	return (
 		<div

@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
 	useEffect(() => {
 		getItems
 			.then((data) => {
-				return data.find((element) => (element.id = id));
+				return data.find((element) => element.id === parseInt(id));
 			})
 			.then((info) => setProductDetail(info));
 	}, [id]);

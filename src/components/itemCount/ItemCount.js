@@ -32,12 +32,11 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 				</button>
 			</div>
 			<div className="w-auto">
-				<a
-					href="#"
+				<button
 					className="btn btn-primary fw-bold"
 					onClick={() => onAdd(items)}>
 					Agregar al Carrito
-				</a>
+				</button>
 			</div>
 		</>
 	);
