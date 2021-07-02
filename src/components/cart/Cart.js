@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { dataProduct } from '../../data.json';
 
 const Cart = () => {
-	const { id, amount } = useParams();
 	const [item, setItem] = useState([]);
 	const getItem = new Promise((resolve, reject) => {
 		setTimeout(() => {
@@ -13,16 +11,16 @@ const Cart = () => {
 	useEffect(() => {
 		getItem
 			.then((data) => {
-				return data.find((element) => element.id === parseInt(id));
+				return data.find((element) => element.id === parseInt());
 			})
 			.then((info) => setItem(info));
-	}, [id, amount]);
+	}, []);
 	return (
 		<>
 			<h3>Detalle de Compra</h3>
-			<p>Producto: {item.title}</p>
-			<p>Cantidad: {amount}</p>
-			<p>Precio: {item.price}</p>
+			<p>Producto:</p>
+			<p>Cantidad:</p>
+			<p>Precio:</p>
 		</>
 	);
 };

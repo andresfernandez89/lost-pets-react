@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../itemCount/ItemCount';
 import './itemDetail.scss';
+import CartContext from '../../context/CartContext';
 
 function ItemDetail({ productDetail }) {
-	const [amount, setAmount] = useState(0);
-
-	const onAdd = (amount) => {
-		setAmount(amount);
+	const [quantity, setQuantity] = useState(0);
+	const { addItem } = useContext(CartContext);
+	const onAdd = (quantity) => {
+		setQuantity(quantity);
 	};
 
 	return (
@@ -36,18 +37,21 @@ function ItemDetail({ productDetail }) {
 							</div>
 						</div>
 					</div>
-					{amount < 1 ? (
+					{quantity < 1 ? (
 						<ItemCount initial={1} stock={10} onAdd={onAdd} />
 					) : (
 						<div>
 							<div className="mb-3 fw-bold">
 								Cantidad de Productos:
-								<span className="fs-5 ms-2">{amount}</span>
+								<span className="fs-5 ms-2">{quantity}</span>
 							</div>
 							<Link
 								className="btn btn-primary fw-bold "
+								onClick={() =>
+									addItem({ productDetail, quantity })
+								}
 								exact
-								to={`/cart/${productDetail.id}/${amount}`}>
+								to={`/cart`}>
 								Terminar compra
 							</Link>
 						</div>
