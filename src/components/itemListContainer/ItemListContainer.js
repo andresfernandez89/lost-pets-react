@@ -30,7 +30,6 @@ const ItemListContainer = ({ text }) => {
 					return data;
 				}
 			})
-
 			.then((dataCategory) => setProducts(dataCategory))
 			.catch((e) => {
 				console.log(e.message);
