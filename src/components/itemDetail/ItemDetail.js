@@ -52,7 +52,7 @@ function ItemDetail({ productDetail }) {
 								}
 								exact
 								to={`/cart`}>
-								Terminar compra
+								Comprar
 							</Link>
 						</div>
 					)}

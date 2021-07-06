@@ -21,17 +21,22 @@ const Cart = () => {
 							<th scope="row">{item.productDetail.title}</th>
 							<td>{item.quantity}</td>
 							<td>{item.productDetail.price}</td>
+
 							<button
+								className="btn bi bi-x-square-fill"
 								onClick={() =>
 									removeItem(item.productDetail.id)
-								}>
-								Eliminar
-							</button>
+								}></button>
 						</tr>
 					</tbody>
 				))}
 			</table>
-			<button onClick={() => clear()}>Eliminar Todo</button>
+			<button onClick={() => clear()}>
+				<i className="bi bi-trash" /> Eliminar Todo
+			</button>
+			<button>
+				<i className="bi bi-arrow-left-square"> Seguir Comprando</i>
+			</button>
 		</>
 	);
 };
