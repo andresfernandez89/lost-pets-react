@@ -10,6 +10,7 @@ export default function CartProvider({ defaultValue = [], children }) {
 		);
 	};
 	const addItem = (obj) => {
+		debugger;
 		if (!isInCart(obj)) {
 			setItems((items) => [...items, obj]);
 		} else {

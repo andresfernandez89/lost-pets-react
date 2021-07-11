@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
 	const { items, removeItem, clear } = useContext(CartContext);
 
+	let totalItem = 0;
+	items.forEach((item) => {
+		return (totalItem += item.productDetail.price * item.quantity);
+	});
+
 	return (
 		<>
 			{items.length === 0 ? (
@@ -28,14 +33,17 @@ const Cart = () => {
 								<th scope="col">Total</th>
 							</tr>
 						</thead>
-						{items.map((item) => (
-							<tbody>
+						<tbody>
+							{items.map((item) => (
 								<tr>
 									<th scope="row">
 										{item.productDetail.title}
 									</th>
 									<td>{item.quantity}</td>
-									<td>{item.productDetail.price}</td>
+									<td>
+										{item.productDetail.price *
+											item.quantity}
+									</td>
 									<td
 										className="btn w-auto bg-danger ms-1"
 										onClick={() =>
@@ -49,8 +57,11 @@ const Cart = () => {
 										/>
 									</td>
 								</tr>
-							</tbody>
-						))}
+							))}
+							<tr className="fs-3 fw-bold">
+								Total a pagar ${totalItem}
+							</tr>
+						</tbody>
 					</table>
 					<div className="text-center">
 						<button
@@ -62,8 +73,11 @@ const Cart = () => {
 							className="btn btn-primary fw-bold"
 							exact
 							to={`/`}>
-							<i className="bi bi-arrow-left-square" /> Seguir
-							Comprando
+							<i className="bi bi-arrow-left-square" /> Agregar
+							mas productos
+						</Link>
+						<Link className="btn btn-success ms-2 fw-bold " exact>
+							Pagar
 						</Link>
 					</div>
 				</div>
