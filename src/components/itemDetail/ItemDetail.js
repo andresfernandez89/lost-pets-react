@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../itemCount/ItemCount';
 import './itemDetail.scss';

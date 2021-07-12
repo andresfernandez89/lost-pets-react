@@ -20,7 +20,7 @@ const ItemListContainer = ({ text }) => {
 			.then((data) => {
 				if (category) {
 					let listCategory = [];
-					data.map((element) => {
+					data.forEach((element) => {
 						if (element.category === category) {
 							listCategory.push(element);
 						}

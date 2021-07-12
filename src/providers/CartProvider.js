@@ -10,15 +10,15 @@ export default function CartProvider({ defaultValue = [], children }) {
 		);
 	};
 	const addItem = (obj) => {
-		debugger;
 		if (!isInCart(obj)) {
 			setItems((items) => [...items, obj]);
 		} else {
-			let y = items.find(
+			const copyItems = [...items];
+			let y = copyItems.find(
 				(element) => element.productDetail.id === obj.productDetail.id
 			);
 			y.quantity += obj.quantity;
-			setItems(items);
+			setItems(copyItems);
 		}
 	};
 	const removeItem = (id) => {

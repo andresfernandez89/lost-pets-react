@@ -1,19 +1,13 @@
 import { Link } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import CartContext from '../../context/CartContext';
 const CartWidget = () => {
 	const { items } = useContext(CartContext);
-	const [totalItems, setTotalItems] = useState(0);
 
-	let quantity = 0;
-	console.log(totalItems);
-	useEffect(() => {
-		debugger;
-		items.forEach((item) => {
-			return (quantity += item.quantity);
-		});
-		setTotalItems(quantity);
-	}, []); // me renueva el numero solo con productos nuevos
+	let quantity = items.map((item) => item.quantity);
+	let totalItems = quantity.reduce((valorInicial, valorSumado) => {
+		return valorInicial + valorSumado;
+	}, 0);
 
 	return (
 		<>
