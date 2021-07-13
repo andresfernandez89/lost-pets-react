@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../itemDetail/ItemDetail';
 import { dataProduct } from '../../data.json';
+import { getFirestore } from '../../factory/firebase';
 
 const getItems = new Promise((resolve, reject) => {
 	setTimeout(() => {
@@ -12,13 +13,14 @@ const ItemDetailContainer = () => {
 	const [productDetail, setProductDetail] = useState([]);
 	const { id } = useParams();
 
-	useEffect(() => {
+	useEffect(() => {}, [id]);
+	/* 	useEffect(() => {
 		getItems
 			.then((data) => {
 				return data.find((element) => element.id === parseInt(id));
 			})
 			.then((info) => setProductDetail(info));
-	}, [id]);
+	}, [id]); */
 
 	return (
 		<>
