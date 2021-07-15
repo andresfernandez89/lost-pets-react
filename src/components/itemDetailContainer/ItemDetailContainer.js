@@ -1,30 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../itemDetail/ItemDetail';
-import { dataProduct } from '../../data.json';
 import { getFirestore } from '../../factory/firebase';
 
-const getItems = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		resolve(dataProduct);
-	}, 2000);
-});
 const ItemDetailContainer = () => {
 	const [productDetail, setProductDetail] = useState([]);
 	const { id } = useParams();
 
-	useEffect(() => {}, [id]);
-	/* 	useEffect(() => {
-		getItems
-			.then((data) => {
-				return data.find((element) => element.id === parseInt(id));
-			})
-			.then((info) => setProductDetail(info));
-	}, [id]); */
+	const db = getFirestore();
+	const itemCollection = db.collection('items');
+	const item = itemCollection.doc(id);
+
+	item.get()
+		.then((querySnapshot) => {
+			if (querySnapshot.size === 0) {
+				console.log('Sin resultados');
+			}
+			setProductDetail(querySnapshot.data());
+		})
+		.catch((error) => console.log('Error al buscar productos', error));
 
 	return (
 		<>
-			<ItemDetail productDetail={productDetail} />
+			<ItemDetail id={id} productDetail={productDetail} />
 		</>
 	);
 };

@@ -5,24 +5,20 @@ export default function CartProvider({ defaultValue = [], children }) {
 	const [items, setItems] = useState(defaultValue);
 
 	const isInCart = (obj) => {
-		return items.find(
-			(element) => element.productDetail.id === obj.productDetail.id
-		);
+		return items.find((element) => element.id === obj.id);
 	};
 	const addItem = (obj) => {
 		if (!isInCart(obj)) {
 			setItems((items) => [...items, obj]);
 		} else {
 			const copyItems = [...items];
-			let y = copyItems.find(
-				(element) => element.productDetail.id === obj.productDetail.id
-			);
+			let y = copyItems.find((element) => element.id === obj.id);
 			y.quantity += obj.quantity;
 			setItems(copyItems);
 		}
 	};
 	const removeItem = (id) => {
-		setItems(items.filter((element) => element.productDetail.id !== id));
+		setItems(items.filter((element) => element.id !== id));
 	};
 	const clear = () => {
 		setItems(defaultValue);

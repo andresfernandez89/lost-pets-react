@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
-const Item = ({ element }) => {
+const Item = ({ id, element }) => {
 	return (
 		<div
-			id={element.id}
+			id={id}
 			className="col-md-6 col-lg-4 d-flex justify-content-center">
 			<div>
 				<div
@@ -19,7 +19,7 @@ const Item = ({ element }) => {
 						<div>
 							<Link
 								className="btn btn-primary fw-bold"
-								to={`/item/${element.id}`}>
+								to={`/item/${id}`}>
 								Ver detalle
 							</Link>
 						</div>

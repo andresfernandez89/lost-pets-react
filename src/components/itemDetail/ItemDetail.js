@@ -4,14 +4,14 @@ import ItemCount from '../itemCount/ItemCount';
 import './itemDetail.scss';
 import CartContext from '../../context/CartContext';
 
-function ItemDetail({ productDetail }) {
+function ItemDetail({ id, productDetail }) {
 	const { addItem } = useContext(CartContext);
 
 	const [quantity, setQuantity] = useState(0);
 
 	const onAdd = (quantity) => {
 		setQuantity(quantity);
-		addItem({ productDetail, quantity });
+		addItem({ id, productDetail, quantity });
 	};
 
 	return (

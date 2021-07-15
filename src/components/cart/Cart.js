@@ -46,9 +46,7 @@ const Cart = () => {
 									</td>
 									<td
 										className="btn w-auto bg-danger ms-1"
-										onClick={() =>
-											removeItem(item.productDetail.id)
-										}>
+										onClick={() => removeItem(item.id)}>
 										<i
 											className="bi bi-dash-lg"
 											style={{
