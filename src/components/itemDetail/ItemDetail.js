@@ -1,17 +1,17 @@
-import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-import ItemCount from '../itemCount/ItemCount';
-import './itemDetail.scss';
-import CartContext from '../../context/CartContext';
+import {useContext, useState} from "react";
+import {Link} from "react-router-dom";
+import ItemCount from "../itemCount/ItemCount";
+import "./itemDetail.scss";
+import CartContext from "../../context/CartContext";
 
-function ItemDetail({ id, productDetail }) {
-	const { addItem } = useContext(CartContext);
+function ItemDetail({id, productDetail}) {
+	const {addItem} = useContext(CartContext);
 
 	const [quantity, setQuantity] = useState(0);
 
 	const onAdd = (quantity) => {
 		setQuantity(quantity);
-		addItem({ id, productDetail, quantity });
+		addItem({id, productDetail, quantity});
 	};
 
 	return (
@@ -25,11 +25,7 @@ function ItemDetail({ id, productDetail }) {
 					</div>
 					<div className="row">
 						<div className="col-md-6 ">
-							<img
-								src={productDetail.pictureUrl}
-								className="rounded"
-								alt=""
-							/>
+							<img src={productDetail.pictureUrl} className="rounded" alt="" />
 						</div>
 						<div className="col-md-5 text-center ">
 							<div className="">
@@ -51,15 +47,12 @@ function ItemDetail({ id, productDetail }) {
 							<Link
 								className="btn btn-success me-3 fw-bold "
 								exact
-								to={`/cart`}>
+								to={`/cart`}
+							>
 								Ir al Carrito
 							</Link>
-							<Link
-								className="btn btn-primary fw-bold"
-								exact
-								to={`/`}>
-								<i className="bi bi-arrow-left-square" />{' '}
-								Agregar mas productos
+							<Link className="btn btn-primary fw-bold" exact to={`/`}>
+								<i className="bi bi-arrow-left-square" /> Agregar mas productos
 							</Link>
 						</div>
 					)}

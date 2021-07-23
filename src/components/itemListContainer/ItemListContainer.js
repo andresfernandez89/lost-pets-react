@@ -1,20 +1,20 @@
-import ItemList from '../itemList/ItemList';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getFirestore } from '../../factory/firebase';
+import ItemList from "../itemList/ItemList";
+import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
+import {getFirestore} from "../../factory/firebase";
 
-const ItemListContainer = ({ text }) => {
+const ItemListContainer = ({text}) => {
 	const [products, setProducts] = useState([]);
-	const { category } = useParams();
+	const {category} = useParams();
 	useEffect(() => {
 		const db = getFirestore();
-		const itemCollection = db.collection('items');
+		const itemCollection = db.collection("items");
 
 		const items = () => {
 			if (!category) {
 				return itemCollection;
 			} else {
-				return itemCollection.where('category', '==', category);
+				return itemCollection.where("category", "==", category);
 			}
 		};
 
@@ -22,16 +22,16 @@ const ItemListContainer = ({ text }) => {
 			.get()
 			.then((querySnapshot) => {
 				if (querySnapshot.size === 0) {
-					console.log('Sin resultados');
+					console.log("Sin resultados");
 				}
 				setProducts(
 					querySnapshot.docs.map((doc) => {
-						return { id: doc.id, data: doc.data() };
+						return {id: doc.id, data: doc.data()};
 					})
 				);
 			})
 
-			.catch((error) => console.log('Error al buscar productos', error));
+			.catch((error) => console.log("Error al buscar productos", error));
 	}, [category]);
 
 	return (
