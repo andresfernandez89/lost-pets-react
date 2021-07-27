@@ -1,5 +1,4 @@
 import {useContext} from "react";
-import {Link} from "react-router-dom";
 import {getFirestore} from "../../factory/firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
@@ -39,82 +38,85 @@ function Checkout() {
 		clear();
 	};
 	return (
-		<div className="row">
+		<>
 			<h2 className="text-center mb-5">Resumen de Compra</h2>
-			<form className=" col-md-6 row">
-				<div className="col-md-10">
-					<label htmlFor="lastanme" className="form-label">
-						Apellido
-					</label>
-					<input
-						type="text"
-						className="form-control"
-						id="lastname"
-						placeholder="Fernandez"
-						required
-					/>
+			<form className="row" onSubmit={() => saveOrder()}>
+				<div className="col-md-6 row">
+					<div className="col-md-10">
+						<label htmlFor="lastanme" className="form-label">
+							Apellido
+						</label>
+						<input
+							type="text"
+							className="form-control"
+							id="lastname"
+							placeholder="Fernandez"
+							required={true}
+						/>
+					</div>
+					<div className="col-md-10">
+						<label htmlFor="name" className="form-label">
+							Nombre
+						</label>
+						<input
+							type="text"
+							className="form-control"
+							id="name"
+							placeholder="Andres Alejandro"
+							required={true}
+						/>
+					</div>
+					<div className="col-md-10">
+						<label htmlFor="phone" className="form-label">
+							Celular
+						</label>
+						<input
+							type="number"
+							className="form-control"
+							id="phone"
+							placeholder="2236545252"
+							required={true}
+						/>
+					</div>
+					<div className="col-md-10">
+						<label htmlFor="payType" className="form-label">
+							Forma de Pago
+						</label>
+						<select className="form-select" id="payType" required={true}>
+							<option disabled="" value="">
+								Selecciona...
+							</option>
+							<option>Efectivo</option>
+							<option>Transferencia Bancaria</option>
+							<option>MercadoPago</option>
+						</select>
+					</div>
 				</div>
-				<div className="col-md-10">
-					<label htmlFor="name" className="form-label">
-						Nombre
-					</label>
-					<input
-						type="text"
-						className="form-control"
-						id="name"
-						placeholder="Andres Alejandro"
-						required
-					/>
-				</div>
-				<div className="col-md-10">
-					<label htmlFor="phone" className="form-label">
-						Celular
-					</label>
-					<input
-						type="number"
-						className="form-control"
-						id="phone"
-						placeholder="2236545252"
-						required="true"
-					/>
-				</div>
-				<div className="col-md-10">
-					<label htmlFor="payType" className="form-label">
-						Forma de Pago
-					</label>
-					<select className="form-select" id="payType" required>
-						<option disabled="" value="">
-							Selecciona...
-						</option>
-						<option>Efectivo</option>
-						<option>Transferencia Bancaria</option>
-						<option>MercadoPago</option>
-					</select>
+				<div className="col-md-4 ">
+					<div className="row">
+						<div className="col-md-12">
+							<p className="fw-bold">Cantidad de Items: {totalQuantity()}</p>
+							<p className="fw-bold">Total a Pagar: {totalPrice()}</p>
+						</div>
+						<div className="form-check mb-3 col-md-12">
+							<input
+								className="form-check-input"
+								type="checkbox"
+								value=""
+								id="agreeTerms"
+								required
+							/>
+							<label className="form-check-label" htmlFor="agreeTerms" required={true}>
+								Agree to terms and conditions
+							</label>
+						</div>
+						<button type="submit" className="btn btn-success ms-2 fw-bold w-auto">
+							Finalizar Compra
+						</button>
+					</div>
 				</div>
 			</form>
-			<div className="col-md-6">
-				<div className="row">
-					<div className="col-md-12">
-						<p className="fw-bold">Cantidad de Items: {totalQuantity()}</p>
-						<p className="fw-bold">Total a Pagar: {totalPrice()}</p>
-					</div>
-					<div className="form-check mb-3 col-md-12">
-						<input className="form-check-input" type="checkbox" value="" id="agreeTerms" required />
-						<label className="form-check-label" htmlFor="agreeTerms">
-							Agree to terms and conditions
-						</label>
-					</div>
-					<Link
-						className="btn btn-success ms-2 fw-bold w-auto"
-						exact
-						to="/"
-						onClick={() => saveOrder()}
-					>
-						Finalizar Compra
-					</Link>
-				</div>
-			</div>
-		</div>
+		</>
 	);
 }
 
