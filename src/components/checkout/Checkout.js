@@ -4,10 +4,13 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import CartContext from "../../context/CartContext";
 import Swal from "sweetalert2";
+import {useHistory} from "react-router-dom";
 
 function Checkout() {
 	const {items, totalQuantity, totalPrice, clear} = useContext(CartContext);
-	const saveOrder = () => {
+	let History = useHistory();
+	const saveOrder = (e) => {
+		e.preventDefault();
 		const products = items.map((item) => {
 			return {
 				id: item.id,
@@ -29,18 +32,30 @@ function Checkout() {
 			totalQuantity: totalQuantity(),
 			totalPrice: totalPrice(),
 		};
-		order.add(newOrder);
-		Swal.fire({
-			icon: "success",
-			title: "Pago realizado con exito",
-			text: `Muchas Gracias ${newOrder.buyer.name} !!`,
+		order.add(newOrder).then(({id}) => {
+			Swal.fire({
+				icon: "success",
+				title: "Pago realizado con exito",
+				text: `Muchas Gracias ${newOrder.buyer.name} !!`,
+				confirmButtonColor: "#198754",
+				confirmButtonText: "Ver Comprobante",
+				showCancelButton: true,
+				cancelButtonColor: "#0d6efd",
+				cancelButtonText: "Volver al Sitio",
+			}).then((result) => {
+				if (result.isConfirmed) {
+					clear();
+					History.push("/ticket", {params: id});
+				} else {
+					History.push("/");
+				}
+			});
 		});
-		clear();
 	};
 	return (
 		<>
 			<h2 className="text-center mb-5">Resumen de Compra</h2>
-			<form className="row" onSubmit={() => saveOrder()}>
+			<form className="row" onSubmit={saveOrder}>
 				<div className="col-md-6 row">
 					<div className="col-md-10">
 						<label htmlFor="lastanme" className="form-label">

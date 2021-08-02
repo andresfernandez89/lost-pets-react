@@ -4,11 +4,6 @@ import CartContext from "../../context/CartContext";
 const CartWidget = () => {
 	const {totalQuantity} = useContext(CartContext);
 
-	/* let quantity = items.map((item) => item.quantity);
-	let totalItems = quantity.reduce((valorInicial, valorSumado) => {
-		return valorInicial + valorSumado;
-	}, 0); */
-
 	return (
 		<>
 			<Link exact to="/cart" className="ms-3">

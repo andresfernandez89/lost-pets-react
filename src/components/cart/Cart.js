@@ -5,11 +5,6 @@ import {Link} from "react-router-dom";
 const Cart = () => {
 	const {items, removeItem, clear, totalPrice} = useContext(CartContext);
 
-	/* 	let totalItem = 0;
-	items.forEach((item) => {
-		totalItem += item.productDetail.price * item.quantity;
-	}); */
-
 	return (
 		<>
 			{items.length === 0 ? (
