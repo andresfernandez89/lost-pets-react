@@ -8,7 +8,7 @@ This project was carried out with **React**.
 
 We use **Firebase** as a database.
 
-![You can view the running application here](./lost-pets.gift)
+![You can view the running application here](./lost-pets.gif)
 
 ## Dependencies
 
