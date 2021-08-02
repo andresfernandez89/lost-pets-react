@@ -48,7 +48,9 @@ const Ticket = () => {
 											<span className="text-sm text-grey-m2 align-middle">Para: </span>
 
 											<span className="text-600 text-110 text-blue align-middle">
-												{`${data.buyer.lastname} ${data.buyer.name}`}
+												{`${
+													data.buyer.lastname.charAt(0).toUpperCase() + data.buyer.lastname.slice(1)
+												} ${data.buyer.name.charAt(0).toUpperCase() + data.buyer.name.slice(1)}`}
 											</span>
 										</div>
 										<div className="text-grey-m2">
@@ -105,7 +107,7 @@ const Ticket = () => {
 													</div>
 												</div>
 												<div className="row my-2">
-													<div className="col-7 text-right">Des. HotSale 10%</div>
+													<div className="col-7 text-right">Des. Hot Sale 10%</div>
 													<div className="col-5">
 														<span className="text-110 text-secondary-d1">
 															${(finalPrice = data.totalPrice * 0.1)}

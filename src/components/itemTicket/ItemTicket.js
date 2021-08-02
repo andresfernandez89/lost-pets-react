@@ -6,13 +6,13 @@ const ItemTicket = () => {
 	return (
 		<>
 			<div>
-				<div className="row fw-bold bgc-default-tp1 py-25">
+				{/* <div className="row fw-bold bgc-default-tp1 py-25">
 					<div className="d-none d-sm-block col-1">#</div>
 					<div className="col-9 col-sm-5">Descripcion</div>
 					<div className="d-none d-sm-block col-4 col-sm-2">Cantidad</div>
 					<div className="d-none d-sm-block col-sm-2">Precio Unitario</div>
 					<div className="col-2">Monto</div>
-				</div>
+				</div> */}
 				{items.map((item, index) => (
 					<div key={item.id} className="text-95 text-secondary-d3">
 						<div className="row mb-2 mb-sm-0 py-25">
