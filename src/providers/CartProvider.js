@@ -14,6 +14,7 @@ export default function CartProvider({defaultValue = [], children}) {
 			const copyItems = [...items];
 			let y = copyItems.find((element) => element.id === obj.id);
 			y.quantity += obj.quantity;
+			y.totalPrice = y.quantity * y.productDetail.price;
 			setItems(copyItems);
 		}
 	};

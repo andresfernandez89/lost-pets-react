@@ -6,12 +6,12 @@ import CartContext from "../../context/CartContext";
 
 function ItemDetail({id, productDetail}) {
 	const {addItem} = useContext(CartContext);
-
 	const [quantity, setQuantity] = useState(0);
 
 	const onAdd = (quantity) => {
 		setQuantity(quantity);
-		addItem({id, productDetail, quantity});
+		let totalPrice = quantity * productDetail.price;
+		addItem({id, productDetail, quantity, totalPrice});
 	};
 
 	return (
@@ -19,9 +19,7 @@ function ItemDetail({id, productDetail}) {
 			<div className="item-datail bg-site-main-violet d-flex justify-content-center rounded">
 				<div className="text-center d-grid gap-4 pb-4">
 					<div className="d-flex justify-content-center">
-						<p className="fs-4 fw-bolder  rounded-3 w-auto m-3">
-							{productDetail.title}
-						</p>
+						<p className="fs-4 fw-bolder  rounded-3 w-auto m-3">{productDetail.title}</p>
 					</div>
 					<div className="row">
 						<div className="col-md-6 ">
@@ -44,14 +42,10 @@ function ItemDetail({id, productDetail}) {
 								Cantidad de Productos:
 								<span className="fs-5 ms-2">{quantity}</span>
 							</div>
-							<Link
-								className="btn btn-success me-3 fw-bold "
-								exact
-								to={`/cart`}
-							>
+							<Link className="btn btn-success me-3 fw-bold" to={`/cart`}>
 								Ir al Carrito
 							</Link>
-							<Link className="btn btn-primary fw-bold" exact to={`/`}>
+							<Link className="btn btn-primary fw-bold" to={`/`}>
 								<i className="bi bi-arrow-left-square" /> Agregar mas productos
 							</Link>
 						</div>

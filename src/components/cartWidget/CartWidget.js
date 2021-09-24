@@ -6,7 +6,7 @@ const CartWidget = () => {
 
 	return (
 		<>
-			<Link exact to="/cart" className="ms-3">
+			<Link to="/cart" className="ms-3">
 				<i className="bi bi-cart4" style={{fontSize: "2rem", color: "black"}} />
 			</Link>
 			{totalQuantity() !== 0 && <span className="ms-2 fs-3">{totalQuantity()}</span>}

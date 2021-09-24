@@ -2,7 +2,10 @@ import {useEffect, useState} from "react";
 import {useLocation, Link} from "react-router-dom";
 import {getFirestore} from "../../factory/firebase";
 import ItemTicket from "../itemTicket/ItemTicket";
+import {useContext} from "react";
+import CartContext from "../../context/CartContext";
 const Ticket = () => {
+	const {clear} = useContext(CartContext);
 	let finalPrice;
 	const [dataOrder, setDataOrder] = useState([]);
 	const location = useLocation();
@@ -26,7 +29,7 @@ const Ticket = () => {
 				<div className="page-header text-blue-d2">
 					<h1 className="page-title text-secondary-d1">N°: #{idOrder}</h1>
 
-					<div className="page-tools">
+					<div className="page-tools my-3">
 						<div className="action-buttons">
 							<Link className="btn bg-white btn-light mx-1px text-95" to="/" data-title="Print">
 								<i className="me-1 fa fa-print text-primary-m1" />
@@ -36,10 +39,10 @@ const Ticket = () => {
 					</div>
 				</div>
 
-				<div className="container px-0">
+				<div className="container border border-secondary border-4 rounded-3 p-3">
 					<div className="row mt-4">
-						{dataOrder.map((data) => (
-							<div className="col-12 col-lg-10 offset-lg-1">
+						{dataOrder.map((data, index) => (
+							<div key={index} className="col-12 col-lg-10 offset-lg-1">
 								<hr className="row brc-default-l1 mx-n1 mb-4" />
 
 								<div className="row">
@@ -77,7 +80,7 @@ const Ticket = () => {
 												<i className="fa fa-circle text-blue-m2 text-xs mr-1" />
 												<span className="text-600 text-90">
 													Fecha:
-													{data.date.seconds}
+													{` ${data.date.toDate().toLocaleString()} hs`}
 												</span>
 											</div>
 
@@ -126,10 +129,14 @@ const Ticket = () => {
 										</div>
 										<hr />
 										<div className="d-flex justify-content-between align-items-center">
-											<Link to="/" className="btn btn-info btn-bold px-4 mt-3 mt-lg-0">
+											<Link
+												to="/"
+												className="btn btn-info btn-bold px-4 mt-lg-0"
+												onClick={() => clear()}
+											>
 												Ir Home
 											</Link>
-											<span className="text-secondary-d1 text-105">Gracias por su compra</span>
+											<span>Gracias por su compra</span>
 										</div>
 									</div>
 								</div>

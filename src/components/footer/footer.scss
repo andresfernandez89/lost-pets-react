@@ -1,0 +1,41 @@
+footer {
+	bottom: 0;
+	.buttonIcon {
+		img {
+			width: 50px;
+			height: 50px;
+			position: fixed;
+			bottom: 60px;
+			right: 20px;
+			z-index: 99;
+		}
+	}
+
+	.tooltipWapp {
+		display: inline-block;
+		.tooltiptext {
+			visibility: hidden;
+			width: auto;
+			background-color: #99d98c;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 6px;
+			position: absolute;
+			right: 75px;
+
+			/* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+			opacity: 0;
+			transition: opacity 1s;
+		}
+		&:hover {
+			.tooltiptext {
+				visibility: visible;
+				opacity: 1;
+				color: black;
+				position: fixed;
+				bottom: 65px;
+			}
+		}
+	}
+}

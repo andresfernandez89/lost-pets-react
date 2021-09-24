@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import "./app.scss";
 import CartProvider from "../../providers/CartProvider";
 import Ticket from "../ticket/Ticket";
+import Footer from "../footer/Footer";
 
 const App = () => {
 	return (
@@ -14,7 +15,7 @@ const App = () => {
 			<>
 				<BrowserRouter>
 					<NavBar />
-					<main className="container main-container vh-100">
+					<main className="container main-container position-relative min-vh-100">
 						<Switch>
 							<Route exact path="/">
 								<ItemListContainer text="Alimentos de Mascotas" />
@@ -39,6 +40,7 @@ const App = () => {
 							</Route>
 						</Switch>
 					</main>
+					<Footer />
 				</BrowserRouter>
 			</>
 		</CartProvider>

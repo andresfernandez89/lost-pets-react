@@ -39,7 +39,7 @@ const ItemListContainer = ({text}) => {
 			<div className="text-center rounded-3 w-auto">
 				<div className="d-flex justify-content-center mb-4">
 					<p className="fs-5 fw-bolder bg-site-main-violet rounded-3 w-auto p-2">
-						{category ? category : text}
+						{category ? category.toUpperCase() : text.toUpperCase()}
 					</p>
 				</div>
 				<ItemList products={products} />
