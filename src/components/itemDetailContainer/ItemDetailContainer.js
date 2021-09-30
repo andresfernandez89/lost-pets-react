@@ -1,32 +1,29 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import ItemDetail from '../itemDetail/ItemDetail';
-import { getFirestore } from '../../factory/firebase';
+import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
+import ItemDetail from "../itemDetail/ItemDetail";
+import {getFirestore} from "../../factory/firebase";
 
 const ItemDetailContainer = () => {
-	const [productDetail, setProductDetail] = useState([]);
-	const { id } = useParams();
+	const [productDetail, setProductDetail] = useState();
+	const {id} = useParams();
 
-	useEffect(()=> {
+	useEffect(() => {
 		const db = getFirestore();
-		const itemCollection = db.collection('items');
+		const itemCollection = db.collection("items");
 		const item = itemCollection.doc(id);
-	
-		item.get()
+
+		item
+			.get()
 			.then((querySnapshot) => {
 				if (querySnapshot.size === 0) {
-					console.log('Sin resultados');
+					console.log("Sin resultados");
 				}
 				setProductDetail(querySnapshot.data());
 			})
-			.catch((error) => console.log('Error al buscar productos', error));
-	},[id])
+			.catch((error) => console.log("Error al buscar productos", error));
+	}, [id]);
 
-	return (
-		<>
-			<ItemDetail id={id} productDetail={productDetail} />
-		</>
-	);
+	return <>{productDetail && <ItemDetail id={id} productDetail={productDetail} />}</>;
 };
 
 export default ItemDetailContainer;

@@ -7,7 +7,6 @@ import CartContext from "../../context/CartContext";
 function ItemDetail({id, productDetail}) {
 	const {addItem} = useContext(CartContext);
 	const [quantity, setQuantity] = useState(0);
-
 	const onAdd = (quantity) => {
 		setQuantity(quantity);
 		let totalPrice = quantity * productDetail.price;
@@ -23,7 +22,11 @@ function ItemDetail({id, productDetail}) {
 					</div>
 					<div className="row">
 						<div className="col-md-6 ">
-							<img src={productDetail.pictureUrl} className="rounded" alt="" />
+							<img
+								src={require(`../../assets/images/${productDetail.pictureUrl}`).default}
+								className="rounded"
+								alt=""
+							/>
 						</div>
 						<div className="col-md-5 text-center ">
 							<div className="">

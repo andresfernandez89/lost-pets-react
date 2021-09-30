@@ -48,11 +48,11 @@ const NavBar = () => {
 							<li className="nav-item">
 								<NavLink
 									exact
-									to={"/category/birds"}
+									to={"/category/turtles"}
 									activeClassName="selected rounded"
 									className="nav-link"
 								>
-									Aves
+									Tortugas
 								</NavLink>
 							</li>
 							<li className="nav-item">
