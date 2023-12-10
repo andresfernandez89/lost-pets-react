@@ -17,7 +17,7 @@ const Footer = () => {
 					<span className="tooltiptext fw-bold fst-italic">Chetea con nosotros !!</span>
 				</div>
 				<div className="text-center p-3 fw-bold fs-6 bg-site-main-violet ">
-					© 2021 Copyright - Lost Pets
+					{`© ${new Date().getFullYear()} Copyright - Lost Pets`}
 				</div>
 			</footer>
 		</>
