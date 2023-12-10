@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/lost-pets-react/static/css/main.d9a17f53.chunk.css",
+    "main.js": "/lost-pets-react/static/js/main.3557e4b9.chunk.js",
+    "main.js.map": "/lost-pets-react/static/js/main.3557e4b9.chunk.js.map",
+    "runtime-main.js": "/lost-pets-react/static/js/runtime-main.66118a99.js",
+    "runtime-main.js.map": "/lost-pets-react/static/js/runtime-main.66118a99.js.map",
+    "static/css/2.64fa8faf.chunk.css": "/lost-pets-react/static/css/2.64fa8faf.chunk.css",
+    "static/js/2.d9f83e5a.chunk.js": "/lost-pets-react/static/js/2.d9f83e5a.chunk.js",
+    "static/js/2.d9f83e5a.chunk.js.map": "/lost-pets-react/static/js/2.d9f83e5a.chunk.js.map",
+    "index.html": "/lost-pets-react/index.html",
+    "static/css/2.64fa8faf.chunk.css.map": "/lost-pets-react/static/css/2.64fa8faf.chunk.css.map",
+    "static/css/main.d9a17f53.chunk.css.map": "/lost-pets-react/static/css/main.d9a17f53.chunk.css.map",
+    "static/js/2.d9f83e5a.chunk.js.LICENSE.txt": "/lost-pets-react/static/js/2.d9f83e5a.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/lost-pets-react/static/media/NotoSansJP-Thin.f9e069c0.otf",
+    "static/media/bootstrap-icons.css": "/lost-pets-react/static/media/bootstrap-icons.dfd0ea12.woff2",
+    "static/media/cat-chow.webp": "/lost-pets-react/static/media/cat-chow.fd0c7c34.webp",
+    "static/media/dog-chow.webp": "/lost-pets-react/static/media/dog-chow.624b4909.webp",
+    "static/media/all.min.css": "/lost-pets-react/static/media/fa-solid-900.efbd5d20.eot",
+    "static/media/nutrafin.webp": "/lost-pets-react/static/media/nutrafin.f55a507a.webp",
+    "static/media/reptomin.webp": "/lost-pets-react/static/media/reptomin.fd5fc1ab.webp",
+    "static/media/royal-canin-cat.webp": "/lost-pets-react/static/media/royal-canin-cat.af585127.webp",
+    "static/media/royal-canin-dog.webp": "/lost-pets-react/static/media/royal-canin-dog.eb6ef623.webp",
+    "static/media/shulet.webp": "/lost-pets-react/static/media/shulet.9ae1717c.webp",
+    "static/media/sieger.webp": "/lost-pets-react/static/media/sieger.7a27c2cc.webp",
+    "static/media/vitalcan.webp": "/lost-pets-react/static/media/vitalcan.af157994.webp",
+    "static/media/whatsapp.6c664d18.svg": "/lost-pets-react/static/media/whatsapp.6c664d18.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.66118a99.js",
+    "static/css/2.64fa8faf.chunk.css",
+    "static/js/2.d9f83e5a.chunk.js",
+    "static/css/main.d9a17f53.chunk.css",
+    "static/js/main.3557e4b9.chunk.js"
+  ]
+}
