@@ -1,7 +1,6 @@
 {
 	"name": "lost-pets-react",
 	"version": "0.1.0",
-	"homepage": "https://andresfernandez89.github.io/lost-pets-react",
 	"private": true,
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.15.3",
