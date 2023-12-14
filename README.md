@@ -1,17 +1,11 @@
 # LOST PETS
 
-[**View Project**]()
-
 This project is an store ecommerce of a **_"Pet Food Store"_**
 
-This project was carried out with **React**.
+[**View Project**]()
 
-**React-router-dom** was used for the navigation components.
-
-We use **Firebase** as a database.
-
-## Dependencies
-
+### Built With
+	
 - node: >=14.17.3
 - @fortawesome/fontawesome-free: ^5.15.3
 - @popperjs/core: ^2.9.2
@@ -28,6 +22,17 @@ We use **Firebase** as a database.
 - sass: ^1.34.1
 - sweetalert2: ^11.0.19
 - web-vitals: ^1.1.2
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/andresfernandez89/lost-pets-react
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
 
 ## Available Scripts
 
